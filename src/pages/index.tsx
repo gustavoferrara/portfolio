@@ -12,12 +12,12 @@ const LandingPage: React.FC = () => {
   const technologiesList: ITechnologiesList = [
     {
       technologyName: 'HTML 5',
-      imageLink: '/technologies/HTML.svg',
+      imageLink: '/technologies/html.svg',
       type: 'frontend',
     },
     {
       technologyName: 'CSS 3',
-      imageLink: '/technologies/CSS.svg',
+      imageLink: '/technologies/css.svg',
       type: 'frontend',
     },
     {
@@ -37,7 +37,7 @@ const LandingPage: React.FC = () => {
     },
     {
       technologyName: 'Next.JS',
-      imageLink: '/technologies/next.svg',
+      imageLink: '/technologies/nextjs.svg',
       type: 'frontend',
     },
     {
