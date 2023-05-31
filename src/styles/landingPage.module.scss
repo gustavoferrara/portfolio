@@ -1,73 +1,109 @@
 @use './partials/fluidSize' as *;
 $base-padding: 32px;
-
-#home_wrapper {
-  padding: 0 32px;
-}
+$shadow-opacity: 0.175;
+$shadow-spread: 12px;
 
 @keyframes rotateShadow {
   0% {
-    filter: drop-shadow(5px -14px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      5px -14px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   6.25% {
-    filter: drop-shadow(-1.5px -14px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -1.5px -14px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   11.25% {
-    filter: drop-shadow(-6.5px -13px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -6.5px -13px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   16.25% {
-    filter: drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -10px -10px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   21.25% {
-    filter: drop-shadow(-12.5px -6px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -12.5px -6px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   26.25% {
-    filter: drop-shadow(-13px 0px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -13px 0px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   31.25% {
-    filter: drop-shadow(-12.5px 6px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -12.5px 6px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   36.25% {
-    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -10px $shadow-spread 10px rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   41.25% {
-    filter: drop-shadow(-6.5px 13px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -6.5px 13px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   46.25% {
-    filter: drop-shadow(-2.75px 14px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      -2.75px 14px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   51.25% {
-    filter: drop-shadow(0.5px 15px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      0.5px 15px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   56.25% {
-    filter: drop-shadow(4px 14px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(4px 14px $shadow-spread rgba(0, 0, 0, $shadow-opacity));
   }
   61.25% {
-    filter: drop-shadow(7.5px 13px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      7.5px 13px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   66.25% {
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      10px $shadow-spread 10px rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   71.25% {
-    filter: drop-shadow(12.5px 6px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      12.5px 6px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   76.25% {
-    filter: drop-shadow(13px 0px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(13px 0px $shadow-spread rgba(0, 0, 0, $shadow-opacity));
   }
   81.25% {
-    filter: drop-shadow(12.5px -6px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      12.5px -6px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   86.25% {
-    filter: drop-shadow(10px -10px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      10px -10px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   91.25% {
-    filter: drop-shadow(6.5px -13px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      6.5px -13px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   96.25% {
-    filter: drop-shadow(2.75px -14px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      2.75px -14px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
   100% {
-    filter: drop-shadow(2.75px -14px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(
+      2.75px -14px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
   }
 }
 
@@ -86,22 +122,26 @@ $base-padding: 32px;
     position: absolute;
     height: 90vh;
     z-index: -1;
-    filter: drop-shadow(14px 15px 2px rgba(0, 0, 0, 0.5));
-    animation: rotateShadow 5s linear infinite;
+    filter: drop-shadow(
+      14px 15px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
+    animation: rotateShadow 3s linear infinite;
   }
 
   &_logo_mobile {
     position: absolute;
-    height: 90vh;
+    height: 100vh;
     z-index: -1;
-    filter: drop-shadow(14px 15px 2px rgba(0, 0, 0, 0.5));
-    animation: rotateShadow 5s linear infinite;
+    filter: drop-shadow(
+      14px 15px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
+    );
+    // animation: rotateShadow 5s linear infinite;
   }
 
   &_heading {
     text-align: center;
     font-weight: 800;
-    font-size: 26px;
+    font-size: fluidSize(26, 320, 42, 600);
 
     > span {
       display: block;
