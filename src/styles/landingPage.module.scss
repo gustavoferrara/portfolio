@@ -1,0 +1,111 @@
+@use './partials/fluidSize' as *;
+// $base-padding: fluidSize(13, 60, 320, 768);
+
+#home_wrapper {
+  padding: 0 32px;
+}
+
+@keyframes rotateShadow {
+  0% {
+    filter: drop-shadow(5px -14px 10px rgba(0, 0, 0, 0.2));
+  }
+  6.25% {
+    filter: drop-shadow(-1.5px -14px 10px rgba(0, 0, 0, 0.2));
+  }
+  11.25% {
+    filter: drop-shadow(-6.5px -13px 10px rgba(0, 0, 0, 0.2));
+  }
+  16.25% {
+    filter: drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.2));
+  }
+  21.25% {
+    filter: drop-shadow(-12.5px -6px 10px rgba(0, 0, 0, 0.2));
+  }
+  26.25% {
+    filter: drop-shadow(-13px 0px 10px rgba(0, 0, 0, 0.2));
+  }
+  31.25% {
+    filter: drop-shadow(-12.5px 6px 10px rgba(0, 0, 0, 0.2));
+  }
+  36.25% {
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.2));
+  }
+  41.25% {
+    filter: drop-shadow(-6.5px 13px 10px rgba(0, 0, 0, 0.2));
+  }
+  46.25% {
+    filter: drop-shadow(-2.75px 14px 10px rgba(0, 0, 0, 0.2));
+  }
+  51.25% {
+    filter: drop-shadow(0.5px 15px 10px rgba(0, 0, 0, 0.2));
+  }
+  56.25% {
+    filter: drop-shadow(4px 14px 10px rgba(0, 0, 0, 0.2));
+  }
+  61.25% {
+    filter: drop-shadow(7.5px 13px 10px rgba(0, 0, 0, 0.2));
+  }
+  66.25% {
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+  }
+  71.25% {
+    filter: drop-shadow(12.5px 6px 10px rgba(0, 0, 0, 0.2));
+  }
+  76.25% {
+    filter: drop-shadow(13px 0px 10px rgba(0, 0, 0, 0.2));
+  }
+  81.25% {
+    filter: drop-shadow(12.5px -6px 10px rgba(0, 0, 0, 0.2));
+  }
+  86.25% {
+    filter: drop-shadow(10px -10px 10px rgba(0, 0, 0, 0.2));
+  }
+  91.25% {
+    filter: drop-shadow(6.5px -13px 10px rgba(0, 0, 0, 0.2));
+  }
+  96.25% {
+    filter: drop-shadow(2.75px -14px 10px rgba(0, 0, 0, 0.2));
+  }
+  100% {
+    filter: drop-shadow(2.75px -14px 10px rgba(0, 0, 0, 0.2));
+  }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
+
+  &_logo {
+    display: none;
+    position: absolute;
+    height: 90vh;
+    z-index: -1;
+    filter: drop-shadow(14px 15px 2px rgba(0, 0, 0, 0.5));
+    transition: filter 1s linear;
+    animation: rotateShadow 5s linear infinite;
+  }
+
+  &_logo_mobile {
+    position: absolute;
+    height: 90vh;
+    z-index: -1;
+    filter: drop-shadow(14px 15px 2px rgba(0, 0, 0, 0.5));
+    transition: filter 1s linear;
+    animation: rotateShadow 5s linear infinite;
+  }
+
+  &_heading {
+    text-align: center;
+    font-weight: 800;
+
+    > span {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

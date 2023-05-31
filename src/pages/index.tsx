@@ -93,12 +93,17 @@ const LandingPage: React.FC = () => {
   ];
 
   return (
-    <main className={styles.home_wrapper}>
+    <main id={styles.home_wrapper}>
       <section className={styles.hero}>
         <h1 className={styles.hero_heading}>
           I&apos;m Gustavo Ferrara <span>Full-stack developer</span>
         </h1>
-        <img src='/logo.svg' alt='' />
+        <img src='/logoherosection.svg' alt='' className={styles.hero_logo} />
+        <img
+          src='/logoherosectionmobile.svg'
+          alt=''
+          className={styles.hero_logo_mobile}
+        />
       </section>
       <section className={styles.technologies}>
         <h2 className={styles.technologies_heading}>
