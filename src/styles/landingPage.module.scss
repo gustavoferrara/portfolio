@@ -1,5 +1,5 @@
 @use './partials/fluidSize' as *;
-// $base-padding: fluidSize(13, 60, 320, 768);
+$base-padding: 32px;
 
 #home_wrapper {
   padding: 0 32px;
@@ -78,6 +78,8 @@
   align-items: center;
   position: relative;
   user-select: none;
+  z-index: 1;
+  padding: 0 $base-padding;
 
   &_logo {
     display: none;
@@ -112,6 +114,9 @@
 //* technologies section
 
 .technologies {
+  padding: 0 $base-padding;
+  position: relative;
+  z-index: 2;
   &_heading {
     font-size: 26px;
     line-height: 1.2;

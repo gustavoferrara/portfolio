@@ -164,30 +164,32 @@ const LandingPage: React.FC = () => {
           better professional.
         </p>
       </section>
-      <section className={styles.projects}>
-        <h2 className={styles.projects_heading}>Projects</h2>
-        <Link href={'/pulseclanwebsite'}>
-          <a className={styles.project_container}>
-            <div>
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                src='/pulseclanpreview.mp4'
-                className={styles.project_container_video}
-                tabIndex={-1}
-              ></video>
-              <p className={styles.project_container_description}>
-                Client work: Full-stack website with custom headless CMS,
-                restless API, authentication, authorization and more
-              </p>
-              <button className={styles.project_container_btn}>
-                View project
-              </button>
-            </div>
-          </a>
-        </Link>
+      <section className={styles.projects_bg}>
+        <div className={styles.projects}>
+          <h2 className={styles.projects_heading}>Projects</h2>
+          <Link href={'/pulseclanwebsite'}>
+            <a className={styles.project_container}>
+              <div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  src='/pulseclanpreview.mp4'
+                  className={styles.project_container_video}
+                  tabIndex={-1}
+                ></video>
+                <p className={styles.project_container_description}>
+                  Client work: Full-stack website with custom headless CMS,
+                  restless API, authentication, authorization and more
+                </p>
+                <button className={styles.project_container_btn}>
+                  View project
+                </button>
+              </div>
+            </a>
+          </Link>
+        </div>
       </section>
     </main>
   );
