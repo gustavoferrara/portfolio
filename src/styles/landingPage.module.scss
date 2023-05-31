@@ -157,22 +157,25 @@ $shadow-spread: 12px;
   padding: 0 $base-padding;
   position: relative;
   z-index: 2;
+  background: linear-gradient(90deg, #d9deec, #cfd4e4);
+
   &_heading {
     font-size: 26px;
     line-height: 1.2;
     font-weight: 700;
     text-align: center;
     color: #1a1a1a;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   &_container {
-    margin: 20px 0;
+    margin: 20px auto;
     border: 2px solid white;
     border-radius: 25px;
-    padding: 20px 30px;
+    padding: 20px 30px 35px;
     text-align: center;
     font-weight: 500;
+    max-width: 1036px;
 
     &_sectiontitle {
       font-size: 18px;
@@ -181,7 +184,6 @@ $shadow-spread: 12px;
 
     &_grid {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       flex-wrap: wrap;
       align-items: center;
@@ -211,5 +213,10 @@ $shadow-spread: 12px;
         }
       }
     }
+  }
+
+  &_paragraph {
+    font-size: 16px;
+    text-align: center;
   }
 }
