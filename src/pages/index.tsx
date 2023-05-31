@@ -62,7 +62,7 @@ const LandingPage: React.FC = () => {
     },
     {
       technologyName: 'NodeJS - Express',
-      imageLink: '/technologies/nodeexpress.svg',
+      imageLink: '/technologies/node-express.svg',
       type: 'backend',
     },
     {
@@ -109,38 +109,55 @@ const LandingPage: React.FC = () => {
         <h2 className={styles.technologies_heading}>
           I work with these technologies
         </h2>
-        <div className={styles.technologies_grid}>
-          <p>Front-end</p>
-          {technologiesList
-            .filter(item => item.type === 'frontend')
-            .map(item => (
-              <div className={styles.technology_item} key={item.imageLink}>
-                <img src={item.imageLink} alt='' />
-                <p>{item.technologyName}</p>
-              </div>
-            ))}
+        <div className={styles.technologies_container}>
+          <p className={styles.technologies_container_sectiontitle}>
+            Front-end
+          </p>
+          <div className={styles.technologies_container_grid}>
+            {technologiesList
+              .filter(item => item.type === 'frontend')
+              .map(item => (
+                <div
+                  className={styles.technologies_container_grid_item}
+                  key={item.imageLink}
+                >
+                  <img src={item.imageLink} alt='' />
+                  <p>{item.technologyName}</p>
+                </div>
+              ))}
+          </div>
         </div>
-        <div className={styles.technologies_grid}>
-          <p>Back-end</p>
-          {technologiesList
-            .filter(item => item.type === 'backend')
-            .map(item => (
-              <div className={styles.technology_item} key={item.imageLink}>
-                <img src={item.imageLink} alt='' />
-                <p>{item.technologyName}</p>
-              </div>
-            ))}
+        <div className={styles.technologies_container}>
+          <p className={styles.technologies_container_sectiontitle}>Back-end</p>
+          <div className={styles.technologies_container_grid}>
+            {technologiesList
+              .filter(item => item.type === 'backend')
+              .map(item => (
+                <div
+                  className={styles.technologies_container_grid_item}
+                  key={item.imageLink}
+                >
+                  <img src={item.imageLink} alt='' />
+                  <p>{item.technologyName}</p>
+                </div>
+              ))}
+          </div>
         </div>
-        <div className={styles.technologies_grid}>
-          <p>Design</p>
-          {technologiesList
-            .filter(item => item.type === 'design')
-            .map(item => (
-              <div className={styles.technology_item} key={item.imageLink}>
-                <img src={item.imageLink} alt='' />
-                <p>{item.technologyName}</p>
-              </div>
-            ))}
+        <div className={styles.technologies_container}>
+          <p className={styles.technologies_container_sectiontitle}>Design</p>
+          <div className={styles.technologies_container_grid}>
+            {technologiesList
+              .filter(item => item.type === 'design')
+              .map(item => (
+                <div
+                  className={styles.technologies_container_grid_item}
+                  key={item.imageLink}
+                >
+                  <img src={item.imageLink} alt='' />
+                  <p>{item.technologyName}</p>
+                </div>
+              ))}
+          </div>
         </div>
         <p className={styles.technologies_paragraph}>
           ...and more! I&apos;m always eager to learn new tools which make me a
