@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from '../styles/landingPage.module.scss';
 
 const LandingPage: React.FC = () => {
@@ -135,10 +137,35 @@ const LandingPage: React.FC = () => {
               </div>
             ))}
         </div>
-        <p>
+        <p className={styles.technologies_paragraph}>
           ...and more! I&apos;m always eager to learn new tools which make me a
           better professional.
         </p>
+      </section>
+      <section className={styles.projects}>
+        <h2 className={styles.projects_heading}>Projects</h2>
+        <Link href={'/pulseclanwebsite'}>
+          <a className={styles.project_container}>
+            <div>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                src='/pulseclanpreview.mp4'
+                className={styles.project_container_video}
+                tabIndex={-1}
+              ></video>
+              <p className={styles.project_container_description}>
+                Client work: Full-stack website with custom headless CMS,
+                restless API, authentication, authorization and more
+              </p>
+              <button className={styles.project_container_btn}>
+                View project
+              </button>
+            </div>
+          </a>
+        </Link>
       </section>
     </main>
   );
