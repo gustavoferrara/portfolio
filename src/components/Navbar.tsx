@@ -7,15 +7,22 @@ const Navbar = () => {
 
   // const toggleMobileNavbar = () => {};
 
+  const scrollToElement = (element: Element) => {
+    const navbarOffset = 45;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - navbarOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  };
+
   const handleHomeButtonClick = () => {
     if (router.pathname === '/') {
       const heroSection = document.querySelector('.landingPage_hero__yOqZh')!;
 
-      heroSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
+      scrollToElement(heroSection);
     } else router.push('/');
   };
 
