@@ -168,24 +168,22 @@ const LandingPage: React.FC = () => {
         <div className={styles.projects}>
           <h2 className={styles.projects_heading}>Projects</h2>
           <Link href={'/pulseclanwebsite'}>
-            <a className={styles.project_container}>
-              <div>
+            <a className={styles.projects_anchor}>
+              <div className={styles.projects_container}>
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  src='/pulseclanpreview.mp4'
-                  className={styles.project_container_video}
+                  src='/pulseclanwebsite/preview.mp4'
+                  className={styles.projects_container_video}
                   tabIndex={-1}
                 ></video>
-                <p className={styles.project_container_description}>
+                <p className={styles.projects_container_description}>
                   Client work: Full-stack website with custom headless CMS,
                   restless API, authentication, authorization and more
                 </p>
-                <button className={styles.project_container_btn}>
-                  View project
-                </button>
+                <p className={styles.projects_container_cta}>View project</p>
               </div>
             </a>
           </Link>

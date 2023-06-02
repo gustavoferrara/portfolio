@@ -216,7 +216,66 @@ $shadow-spread: 12px;
   }
 
   &_paragraph {
-    font-size: 16px;
+    font-size: 17px;
     text-align: center;
+  }
+}
+
+// * projects section
+
+.projects {
+  padding: 30px $base-padding;
+  margin-top: 40px;
+
+  &_bg {
+    background: linear-gradient(-90deg, #d9deec, #cfd4e4);
+  }
+
+  &_heading {
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    color: #1a1a1a;
+  }
+
+  &_anchor {
+    display: block;
+    margin: 20px 0;
+    transition: transform 0.15s ease-out;
+
+    &:hover {
+      transform: scale(1.07);
+
+      & .projects_container_cta {
+        background-color: #101010;
+        color: #d4d9e8;
+      }
+    }
+  }
+
+  &_container {
+    &_video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    &_description {
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    &_cta {
+      margin: 0 auto;
+      width: fit-content;
+      border: 2px solid #101010;
+      padding: 6px 30px;
+      border-radius: 1000px;
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 15px;
+
+      transition: background-color 0.15s ease-out, color 0.15s ease-out;
+    }
   }
 }
