@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
+import { useRef } from 'react';
 
 import styles from '@/styles/navbar.module.scss';
 
 const Navbar = () => {
   const router = useRouter();
-
-  // const toggleMobileNavbar = () => {};
+  const mobileNavbar = useRef<HTMLElement | null>(null);
 
   const scrollToElement = (element: Element) => {
     const navbarOffset = 45;
@@ -26,15 +26,49 @@ const Navbar = () => {
     } else router.push('/');
   };
 
+  const handleNavButtonClick = async (sectionClass: string) => {
+    if (router.pathname !== '/') await router.push('/');
+
+    const checkSection = () => {
+      const section = document.querySelector(sectionClass);
+
+      if (!section) setTimeout(checkSection, 200);
+      else {
+        scrollToElement(section);
+      }
+    };
+
+    checkSection();
+  };
+
   return (
     <header id={styles.header}>
       <nav ref={mobileNavbar} className={styles.mobile_navmenu}>
         <button className={styles.mobile_navmenu_close}>
           <img src='/navbar/close.svg' alt='' />
         </button>
-        <button className={styles.mobile_navmenu_btn}>Tech stack</button>
-        <button className={styles.mobile_navmenu_btn}>Projects</button>
-        <button className={styles.mobile_navmenu_btn}>Contact</button>
+        <button
+          onClick={() =>
+            handleNavButtonClick('.landingPage_technologies__yiObY')
+          }
+          className={styles.mobile_navmenu_btn}
+        >
+          Tech stack
+        </button>
+        <button
+          onClick={() =>
+            handleNavButtonClick('.landingPage_projects_bg__QMEX1')
+          }
+          className={styles.mobile_navmenu_btn}
+        >
+          Projects
+        </button>
+        <button
+          onClick={() => handleNavButtonClick('footer')}
+          className={styles.mobile_navmenu_btn}
+        >
+          Contact
+        </button>
       </nav>
 
       <nav id={styles.navbar}>
