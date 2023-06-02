@@ -28,6 +28,15 @@ const Navbar = () => {
 
   return (
     <header id={styles.header}>
+      <nav ref={mobileNavbar} className={styles.mobile_navmenu}>
+        <button className={styles.mobile_navmenu_close}>
+          <img src='/navbar/close.svg' alt='' />
+        </button>
+        <button className={styles.mobile_navmenu_btn}>Tech stack</button>
+        <button className={styles.mobile_navmenu_btn}>Projects</button>
+        <button className={styles.mobile_navmenu_btn}>Contact</button>
+      </nav>
+
       <nav id={styles.navbar}>
         <button
           onClick={handleHomeButtonClick}
