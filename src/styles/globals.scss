@@ -110,10 +110,15 @@ li {
   list-style-type: none;
 }
 
-*:focus:not(:focus-visible),
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
 *:focus,
 *:focus-visible {
-  outline: none;
+  outline: 3px solid #da4545;
+  outline-offset: 5px;
+  border-radius: 5px;
 }
 
 #wrapper {
