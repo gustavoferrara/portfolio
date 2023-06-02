@@ -1,0 +1,73 @@
+#footer {
+  padding: 35px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.email {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  display: block;
+
+  font-size: 18px;
+  // font-weight: 500;
+  position: relative;
+  width: fit-content;
+  margin: 6px auto 0;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    background-image: url('/copytoclipboard.svg');
+    background-size: 13.5px 13.5px;
+    width: 13.5px;
+    height: 13.5px;
+    // position: absolute;
+    // right: -6%;
+    // top: 24%;
+    margin-left: 3px;
+  }
+}
+
+.curriculum {
+  display: block;
+  margin: 10px auto;
+  background: linear-gradient(-90deg, #d9deec, #cfd4e4);
+  width: fit-content;
+
+  padding: 13px 25px;
+  border-radius: 11px;
+  filter: drop-shadow(5px 7px 5px rgba(0, 0, 0, 0.13));
+  font-weight: 500;
+  font-size: 18px;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    background-image: url('/cv.svg');
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 8%;
+    top: 32%;
+  }
+}
+
+.socialmedia {
+  display: inline-block;
+  margin: 7px 10px 0;
+
+  &_icon {
+    height: 31px;
+    width: 31px;
+  }
+}

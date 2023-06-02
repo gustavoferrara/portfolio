@@ -1,7 +1,7 @@
 // import Head from 'next/head';
 // import { useRouter } from 'next/router';
 
-// import Footer from './Footer';
+import Footer from './Footer';
 // import Navbar from './Navbar';
 // import RouteTransition from './RouteTransition';
 
@@ -62,7 +62,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* <RouteTransition /> */}
         {/* <Navbar /> */}
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
