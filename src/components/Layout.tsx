@@ -2,7 +2,7 @@
 // import { useRouter } from 'next/router';
 
 import Footer from './Footer';
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 // import RouteTransition from './RouteTransition';
 
 interface LayoutProps {
@@ -60,7 +60,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Head> */}
       <div id='wrapper'>
         {/* <RouteTransition /> */}
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
         <Footer />
       </div>
