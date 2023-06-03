@@ -26,6 +26,24 @@ const Navbar = () => {
     } else router.push('/');
   };
 
+  const toggleMobileNavbar = () => {
+    const mobileNavStyles = getComputedStyle(mobileNavbar.current!);
+
+    if (mobileNavStyles.display === 'none') {
+      mobileNavbar.current!.style.display = 'flex';
+
+      setTimeout(() => {
+        mobileNavbar.current!.style.opacity = '1';
+      }, 1);
+    } else {
+      mobileNavbar.current!.style.opacity = '0';
+
+      setTimeout(() => {
+        mobileNavbar.current!.style.display = 'none';
+      }, 125);
+    }
+  };
+
   const handleNavButtonClick = async (sectionClass: string) => {
     if (router.pathname !== '/') await router.push('/');
 
@@ -34,6 +52,7 @@ const Navbar = () => {
 
       if (!section) setTimeout(checkSection, 200);
       else {
+        toggleMobileNavbar();
         scrollToElement(section);
       }
     };
@@ -44,7 +63,10 @@ const Navbar = () => {
   return (
     <header id={styles.header}>
       <nav ref={mobileNavbar} className={styles.mobile_navmenu}>
-        <button className={styles.mobile_navmenu_close}>
+        <button
+          onClick={toggleMobileNavbar}
+          className={styles.mobile_navmenu_close}
+        >
           <img src='/navbar/close.svg' alt='' />
         </button>
         <button
@@ -78,7 +100,10 @@ const Navbar = () => {
         >
           <img src='/logo.svg' alt='' />
         </button>
-        <button className={styles.navbar_hamburgerbtn}>
+        <button
+          onClick={toggleMobileNavbar}
+          className={styles.navbar_hamburgerbtn}
+        >
           <img src='/navbar/hamburgermenu.svg' alt='' />
         </button>
       </nav>
