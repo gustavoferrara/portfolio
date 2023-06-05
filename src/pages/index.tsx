@@ -11,21 +11,6 @@ const LandingPage: React.FC = () => {
 
   const technologiesList: ITechnologiesList = [
     {
-      technologyName: 'HTML 5',
-      imageLink: '/technologies/html.svg',
-      type: 'frontend',
-    },
-    {
-      technologyName: 'CSS 3',
-      imageLink: '/technologies/css.svg',
-      type: 'frontend',
-    },
-    {
-      technologyName: 'Javascript',
-      imageLink: '/technologies/js.svg',
-      type: 'frontend',
-    },
-    {
       technologyName: 'Typescript',
       imageLink: '/technologies/ts.svg',
       type: 'frontend',
@@ -46,11 +31,6 @@ const LandingPage: React.FC = () => {
       type: 'frontend',
     },
     {
-      technologyName: 'Post CSS',
-      imageLink: '/technologies/postcss.svg',
-      type: 'frontend',
-    },
-    {
       technologyName: 'Git',
       imageLink: '/technologies/git.svg',
       type: 'frontend',
@@ -58,6 +38,26 @@ const LandingPage: React.FC = () => {
     {
       technologyName: 'Webpack',
       imageLink: '/technologies/webpack.svg',
+      type: 'frontend',
+    },
+    {
+      technologyName: 'HTML 5',
+      imageLink: '/technologies/html.svg',
+      type: 'frontend',
+    },
+    {
+      technologyName: 'CSS 3',
+      imageLink: '/technologies/css.svg',
+      type: 'frontend',
+    },
+    {
+      technologyName: 'Javascript',
+      imageLink: '/technologies/js.svg',
+      type: 'frontend',
+    },
+    {
+      technologyName: 'Post CSS',
+      imageLink: '/technologies/postcss.svg',
       type: 'frontend',
     },
     {
