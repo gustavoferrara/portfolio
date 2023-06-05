@@ -18,7 +18,6 @@
   display: block;
 
   font-size: 18px;
-  // font-weight: 500;
   position: relative;
   width: fit-content;
   margin: 6px auto 0;
@@ -30,10 +29,40 @@
     background-size: 13.5px 13.5px;
     width: 13.5px;
     height: 13.5px;
-    // position: absolute;
-    // right: -6%;
-    // top: 24%;
     margin-left: 3px;
+  }
+
+  &::before {
+    font-size: 14px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #101010;
+    color: white;
+    padding: 4px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &_tooltip-copy {
+    &::before {
+      content: 'Copy';
+    }
+  }
+
+  &_tooltip-copied {
+    &::before {
+      content: 'Copied!';
+    }
   }
 }
 
@@ -49,6 +78,8 @@
   font-weight: 500;
   font-size: 18px;
 
+  transition: font-weight 0.15s ease-out, transform 0.1s ease-out;
+
   &::after {
     content: '';
     display: inline-block;
@@ -60,6 +91,11 @@
     right: 8%;
     top: 32%;
   }
+
+  &:hover {
+    font-weight: 600;
+    transform: scale(1.05);
+  }
 }
 
 .socialmedia {
@@ -69,5 +105,11 @@
   &_icon {
     height: 31px;
     width: 31px;
+  }
+
+  transition: transform 0.1s ease-out;
+
+  &:hover {
+    transform: scale(1.2);
   }
 }
