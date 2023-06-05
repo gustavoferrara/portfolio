@@ -164,7 +164,7 @@ const LandingPage: React.FC = () => {
           better professional.
         </p>
       </section>
-      <section className={styles.projects_bg}>
+      <section id={styles.projects} className={styles.projects_bg}>
         <div className={styles.projects}>
           <h2 className={styles.projects_heading}>Projects</h2>
           <Link href={'/pulseclanwebsite'}>
