@@ -44,15 +44,19 @@ const Navbar = () => {
     }
   };
 
-  const handleNavButtonClick = async (sectionClass: string) => {
-    if (router.pathname !== '/') await router.push('/');
+  const handleNavButtonClick = async (
+    sectionClass: string,
+    navbarType: 'mobile' | 'desktop',
+  ) => {
+    if (router.pathname !== '/' && sectionClass !== 'footer')
+      await router.push('/');
 
     const checkSection = () => {
       const section = document.querySelector(sectionClass);
 
       if (!section) setTimeout(checkSection, 200);
       else {
-        toggleMobileNavbar();
+        navbarType === 'mobile' && toggleMobileNavbar();
         scrollToElement(section);
       }
     };
@@ -71,7 +75,7 @@ const Navbar = () => {
         </button>
         <button
           onClick={() =>
-            handleNavButtonClick('.landingPage_technologies__yiObY')
+            handleNavButtonClick('.landingPage_technologies__yiObY', 'mobile')
           }
           className={styles.mobile_navmenu_btn}
         >
@@ -79,14 +83,14 @@ const Navbar = () => {
         </button>
         <button
           onClick={() =>
-            handleNavButtonClick('.landingPage_projects_bg__QMEX1')
+            handleNavButtonClick('.landingPage_projects_bg__QMEX1', 'mobile')
           }
           className={styles.mobile_navmenu_btn}
         >
           Projects
         </button>
         <button
-          onClick={() => handleNavButtonClick('footer')}
+          onClick={() => handleNavButtonClick('footer', 'mobile')}
           className={styles.mobile_navmenu_btn}
         >
           Contact
