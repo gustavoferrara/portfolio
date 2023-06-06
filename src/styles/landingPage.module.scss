@@ -134,12 +134,23 @@ $shadow-spread: 12px;
   &_heading {
     text-align: center;
     font-weight: 800;
-    font-size: fluidSize(26, 320, 42, 600);
+    font-size: fluidSize(26, 320, 54, 768);
+
+    // 1100px
+    @media screen and (min-width: 68.75em) {
+      font-size: fluidSize(75, 1100, 77, 2000);
+    }
 
     > span {
       display: block;
       font-size: 14px;
       font-weight: 400;
+      font-size: fluidSize(14, 320, 22, 768);
+
+      // 1100px
+      @media screen and (min-width: 68.75em) {
+        font-size: fluidSize(28, 1100, 27, 2000);
+      }
     }
   }
 }
@@ -153,12 +164,17 @@ $shadow-spread: 12px;
   background: linear-gradient(90deg, #d9deec, #cfd4e4);
 
   &_heading {
-    font-size: 26px;
+    font-size: fluidSize(26, 320, 40, 1000);
+
     line-height: 1.2;
     font-weight: 700;
     text-align: center;
     color: #1a1a1a;
-    margin-top: 50px;
+    padding-top: 50px;
+
+    @media screen and (min-width: 48em) {
+      font-size: 40px;
+    }
   }
 
   &_container {
@@ -226,11 +242,16 @@ $shadow-spread: 12px;
   }
 
   &_heading {
-    font-size: 26px;
+    font-size: fluidSize(26, 320, 40, 1000);
+
     line-height: 1.2;
     font-weight: 700;
     text-align: center;
     color: #1a1a1a;
+
+    @media screen and (min-width: 48em) {
+      font-size: 40px;
+    }
   }
 
   &_anchor {
@@ -274,7 +295,7 @@ $shadow-spread: 12px;
   }
 }
 
-// 1000px
+//* 1000px
 @media screen and (min-width: 62.5em) {
   .hero {
     &_logo {
@@ -283,6 +304,29 @@ $shadow-spread: 12px;
 
     &_logo_mobile {
       display: none;
+    }
+  }
+
+  .technologies {
+    &_container {
+      margin: 40px auto;
+    }
+
+    &_paragraph {
+      font-size: 20px;
+    }
+  }
+
+  .projects {
+    &_container {
+      &_description {
+        margin-top: 15px;
+        font-size: 22px;
+      }
+
+      &_cta {
+        font-size: 25px;
+      }
     }
   }
 }
