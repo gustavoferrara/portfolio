@@ -1,8 +1,12 @@
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
-import styles from '../styles/landingPage.module.scss';
+import styles from '@/styles/landingPage.module.scss';
 
 const LandingPage: React.FC = () => {
+  const logoImgDesktop = useRef<HTMLImageElement | null>(null);
+  const logoImgMobile = useRef<HTMLImageElement | null>(null);
+
   type ITechnologiesList = Array<{
     technologyName: string;
     imageLink: string;
@@ -92,14 +96,57 @@ const LandingPage: React.FC = () => {
     },
   ];
 
+  const resizeHeroSectionLogoImage = () => {
+    let logoImg: HTMLImageElement;
+
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    if (screenWidth >= 1000) logoImg = logoImgDesktop.current!;
+    else logoImg = logoImgMobile.current!;
+
+    const aspectRatio = logoImg.naturalWidth / logoImg.naturalHeight;
+
+    let imageWidth = screenWidth;
+    let imageHeight = screenWidth / aspectRatio;
+
+    if (imageHeight < screenHeight) {
+      imageHeight = screenHeight;
+      imageWidth = screenHeight * aspectRatio;
+    }
+
+    if (imageWidth < screenWidth * 1.1 && imageHeight > screenHeight * 1.1) {
+      imageWidth = screenWidth * 1.1;
+      imageHeight = imageWidth / aspectRatio;
+    }
+
+    logoImg.style.width = imageWidth + 'px';
+    logoImg.style.height = imageHeight + 'px';
+  };
+
+  useEffect(() => {
+    resizeHeroSectionLogoImage();
+
+    window.addEventListener('resize', resizeHeroSectionLogoImage);
+    return () => {
+      window.removeEventListener('resize', resizeHeroSectionLogoImage);
+    };
+  }, []);
+
   return (
     <main id={styles.home_wrapper}>
       <section className={styles.hero}>
         <h1 className={styles.hero_heading}>
           I&apos;m Gustavo Ferrara <span>Full-stack developer</span>
         </h1>
-        <img src='/logoherosection.svg' alt='' className={styles.hero_logo} />
         <img
+          ref={logoImgDesktop}
+          src='/logoherosection.svg'
+          alt=''
+          className={styles.hero_logo}
+        />
+        <img
+          ref={logoImgMobile}
           src='/logoherosectionmobile.svg'
           alt=''
           className={styles.hero_logo_mobile}

@@ -1,6 +1,6 @@
 @use './partials/fluidSize' as *;
 $base-padding: 32px;
-$shadow-opacity: 0.175;
+$shadow-opacity: 0.1;
 $shadow-spread: 12px;
 
 @keyframes rotateShadow {
@@ -120,22 +120,15 @@ $shadow-spread: 12px;
   &_logo {
     display: none;
     position: absolute;
-    height: 90vh;
     z-index: -1;
-    filter: drop-shadow(
-      14px 15px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
-    );
-    animation: rotateShadow 3s linear infinite;
+    filter: drop-shadow(50px 24px 30px rgba(0, 0, 0, $shadow-opacity));
   }
 
   &_logo_mobile {
     position: absolute;
     height: 100vh;
     z-index: -1;
-    filter: drop-shadow(
-      14px 15px $shadow-spread rgba(0, 0, 0, $shadow-opacity)
-    );
-    animation: rotateShadow 5s linear infinite;
+    filter: drop-shadow(50px 24px 30px rgba(0, 0, 0, $shadow-opacity));
   }
 
   &_heading {
@@ -277,6 +270,19 @@ $shadow-spread: 12px;
       margin-top: 15px;
 
       transition: background-color 0.15s ease-out, color 0.15s ease-out;
+    }
+  }
+}
+
+// 1000px
+@media screen and (min-width: 62.5em) {
+  .hero {
+    &_logo {
+      display: block;
+    }
+
+    &_logo_mobile {
+      display: none;
     }
   }
 }
