@@ -256,8 +256,9 @@ $shadow-spread: 12px;
 
   &_anchor {
     display: block;
-    margin: 20px 0;
+    margin: 30px auto 20px;
     transition: transform 0.15s ease-out;
+    max-width: 1100px;
 
     &:hover {
       transform: scale(1.07);
@@ -272,7 +273,7 @@ $shadow-spread: 12px;
   &_container {
     &_video {
       width: 100%;
-      border-radius: 10px;
+      border-radius: fluidSize(10, 320, 20, 1100);
     }
 
     &_description {
