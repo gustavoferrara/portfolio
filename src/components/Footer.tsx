@@ -62,6 +62,10 @@ const Footer = () => {
           alt='linkedin'
         />
       </a>
+
+      <p className={styles.copyright}>
+        &copy; 2023 Gustavo Ferrara. All rights reserved
+      </p>
     </footer>
   );
 };
