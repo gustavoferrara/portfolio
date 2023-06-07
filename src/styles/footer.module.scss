@@ -1,11 +1,18 @@
+@use './partials/fluidSize' as *;
+
 #footer {
   padding: 35px 0 0;
   text-align: center;
 }
 
 .title {
-  font-size: 27px;
+  font-size: fluidSize(26, 320, 40, 1000);
+
   font-weight: 700;
+
+  @media screen and (min-width: 48em) {
+    font-size: 40px;
+  }
 }
 
 .email {
@@ -119,4 +126,43 @@
   font-weight: 500;
   margin-bottom: 20px;
   color: #242424;
+}
+
+// 1000px
+@media screen and (min-width: 62.5em) {
+  .email {
+    font-size: 22px;
+
+    &::before {
+      font-size: 18px;
+    }
+
+    &::after {
+      background-size: 18px 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .curriculum {
+    font-size: 22px;
+    margin: 15px auto;
+
+    &::after {
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .socialmedia {
+    &_icon {
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
 }
