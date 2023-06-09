@@ -8,7 +8,9 @@ const Navbar = () => {
   const mobileNavbar = useRef<HTMLElement | null>(null);
 
   const scrollToElement = (element: Element) => {
-    const navbarOffset = 45;
+    const desktopNavbar = window.innerWidth >= 1000;
+
+    const navbarOffset = desktopNavbar ? 65 : 45;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - navbarOffset;
 
