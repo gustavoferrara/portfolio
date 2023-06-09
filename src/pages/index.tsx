@@ -149,8 +149,11 @@ const LandingPage: React.FC = () => {
     mouseAction: 'enter' | 'leave',
     technologySectionContainer: HTMLDivElement,
   ) => {
-    if (mouseAction === 'leave')
-      return (technologySectionContainer.style.border = '3px solid #edf1ff');
+    if (mouseAction === 'leave') {
+      technologySectionContainer.style.border = '3px solid #edf1ff';
+      technologySectionContainer.style.boxShadow = `0px 0px 20px #00000018`;
+      return;
+    }
 
     const selectedTechnologyName = (event.target as HTMLElement).innerText;
 
@@ -159,6 +162,9 @@ const LandingPage: React.FC = () => {
     )?.outlineBorderColor;
 
     technologySectionContainer.style.border = `3px solid ${selectedBorderColor}`;
+    technologySectionContainer.style.boxShadow = `0px 0px 15px ${
+      selectedBorderColor !== '#000000' ? selectedBorderColor : '#00000018'
+    }`;
   };
 
   useEffect(() => {

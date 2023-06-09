@@ -180,12 +180,13 @@ $shadow-spread: 12px;
   &_container {
     margin: 20px auto;
     border: 3px solid #edf1ff;
+    box-shadow: 0px 0px 20px #00000018;
     border-radius: 25px;
     padding: 20px 30px 35px;
     text-align: center;
     font-weight: 500;
     max-width: 930px;
-    transition: border 0.2s ease-out;
+    transition: border 0.2s ease-out, box-shadow 0.2s ease-out;
 
     &_sectiontitle {
       font-size: 20px;
