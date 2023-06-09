@@ -6,11 +6,15 @@ import styles from '@/styles/landingPage.module.scss';
 const LandingPage: React.FC = () => {
   const logoImgDesktop = useRef<HTMLImageElement | null>(null);
   const logoImgMobile = useRef<HTMLImageElement | null>(null);
+  const frontendContainerOutline = useRef<HTMLDivElement | null>(null);
+  const backendContainerOutline = useRef<HTMLDivElement | null>(null);
+  const designContainerOutline = useRef<HTMLDivElement | null>(null);
 
   type ITechnologiesList = Array<{
     technologyName: string;
     imageLink: string;
     type: 'frontend' | 'backend' | 'design';
+    outlineBorderColor: string;
   }>;
 
   const technologiesList: ITechnologiesList = [
@@ -18,81 +22,97 @@ const LandingPage: React.FC = () => {
       technologyName: 'Typescript',
       imageLink: '/technologies/ts.svg',
       type: 'frontend',
+      outlineBorderColor: '#3178c6',
     },
     {
       technologyName: 'React',
       imageLink: '/technologies/react.svg',
       type: 'frontend',
+      outlineBorderColor: '#00b8d9',
     },
     {
       technologyName: 'Next.JS',
       imageLink: '/technologies/nextjs.svg',
       type: 'frontend',
+      outlineBorderColor: '#000000',
     },
     {
       technologyName: 'Sass',
       imageLink: '/technologies/sass.svg',
       type: 'frontend',
+      outlineBorderColor: '#cd6799',
     },
     {
       technologyName: 'Git',
       imageLink: '/technologies/git.svg',
       type: 'frontend',
+      outlineBorderColor: '#f03c2e',
     },
     {
       technologyName: 'Webpack',
       imageLink: '/technologies/webpack.svg',
       type: 'frontend',
+      outlineBorderColor: '#8ed6fb',
     },
     {
       technologyName: 'HTML 5',
       imageLink: '/technologies/html.svg',
       type: 'frontend',
+      outlineBorderColor: '#f16529',
     },
     {
       technologyName: 'CSS 3',
       imageLink: '/technologies/css.svg',
       type: 'frontend',
+      outlineBorderColor: '#3c9cd7',
     },
     {
       technologyName: 'Javascript',
       imageLink: '/technologies/js.svg',
       type: 'frontend',
+      outlineBorderColor: '#f7df1e',
     },
     {
       technologyName: 'Post CSS',
       imageLink: '/technologies/postcss.svg',
       type: 'frontend',
+      outlineBorderColor: '#000000',
     },
     {
       technologyName: 'NodeJS - Express',
       imageLink: '/technologies/node-express.svg',
       type: 'backend',
+      outlineBorderColor: '#83cd29',
     },
     {
       technologyName: 'MongoDB',
       imageLink: '/technologies/mongodb.svg',
       type: 'backend',
+      outlineBorderColor: '#12924f',
     },
     {
       technologyName: 'Nginx',
       imageLink: '/technologies/nginx.svg',
       type: 'backend',
+      outlineBorderColor: '#009900',
     },
     {
       technologyName: 'Figma',
       imageLink: '/technologies/figma.svg',
       type: 'design',
+      outlineBorderColor: '#ff7262',
     },
     {
       technologyName: 'Adobe Photoshop',
       imageLink: '/technologies/photoshop.svg',
       type: 'design',
+      outlineBorderColor: '#31a8ff',
     },
     {
       technologyName: 'Adobe Illustrator',
       imageLink: '/technologies/illustrator.svg',
       type: 'design',
+      outlineBorderColor: '#ff9a00',
     },
   ];
 
@@ -122,6 +142,23 @@ const LandingPage: React.FC = () => {
 
     logoImg.style.width = imageWidth + 'px';
     logoImg.style.height = imageHeight + 'px';
+  };
+
+  const handleTechnologyItemMouseHover = (
+    event: React.MouseEvent<HTMLDivElement>,
+    mouseAction: 'enter' | 'leave',
+    technologySectionContainer: HTMLDivElement,
+  ) => {
+    if (mouseAction === 'leave')
+      return (technologySectionContainer.style.border = '3px solid #edf1ff');
+
+    const selectedTechnologyName = (event.target as HTMLElement).innerText;
+
+    const selectedBorderColor = technologiesList.find(
+      tech => tech.technologyName === selectedTechnologyName,
+    )?.outlineBorderColor;
+
+    technologySectionContainer.style.border = `3px solid ${selectedBorderColor}`;
   };
 
   useEffect(() => {
@@ -156,7 +193,10 @@ const LandingPage: React.FC = () => {
         <h2 className={styles.technologies_heading}>
           I work with these technologies
         </h2>
-        <div className={styles.technologies_container}>
+        <div
+          ref={frontendContainerOutline}
+          className={styles.technologies_container}
+        >
           <p className={styles.technologies_container_sectiontitle}>
             Front-end
           </p>
@@ -167,6 +207,20 @@ const LandingPage: React.FC = () => {
                 <div
                   className={styles.technologies_container_grid_item}
                   key={item.imageLink}
+                  onMouseEnter={e =>
+                    handleTechnologyItemMouseHover(
+                      e,
+                      'enter',
+                      frontendContainerOutline.current!,
+                    )
+                  }
+                  onMouseLeave={e =>
+                    handleTechnologyItemMouseHover(
+                      e,
+                      'leave',
+                      frontendContainerOutline.current!,
+                    )
+                  }
                 >
                   <img src={item.imageLink} alt='' />
                   <p>{item.technologyName}</p>
@@ -174,7 +228,10 @@ const LandingPage: React.FC = () => {
               ))}
           </div>
         </div>
-        <div className={styles.technologies_container}>
+        <div
+          ref={backendContainerOutline}
+          className={styles.technologies_container}
+        >
           <p className={styles.technologies_container_sectiontitle}>Back-end</p>
           <div className={styles.technologies_container_grid}>
             {technologiesList
@@ -183,6 +240,20 @@ const LandingPage: React.FC = () => {
                 <div
                   className={styles.technologies_container_grid_item}
                   key={item.imageLink}
+                  onMouseEnter={e =>
+                    handleTechnologyItemMouseHover(
+                      e,
+                      'enter',
+                      backendContainerOutline.current!,
+                    )
+                  }
+                  onMouseLeave={e =>
+                    handleTechnologyItemMouseHover(
+                      e,
+                      'leave',
+                      backendContainerOutline.current!,
+                    )
+                  }
                 >
                   <img src={item.imageLink} alt='' />
                   <p>{item.technologyName}</p>
@@ -190,7 +261,10 @@ const LandingPage: React.FC = () => {
               ))}
           </div>
         </div>
-        <div className={styles.technologies_container}>
+        <div
+          ref={designContainerOutline}
+          className={styles.technologies_container}
+        >
           <p className={styles.technologies_container_sectiontitle}>Design</p>
           <div className={styles.technologies_container_grid}>
             {technologiesList
@@ -199,6 +273,20 @@ const LandingPage: React.FC = () => {
                 <div
                   className={styles.technologies_container_grid_item}
                   key={item.imageLink}
+                  onMouseEnter={e =>
+                    handleTechnologyItemMouseHover(
+                      e,
+                      'enter',
+                      designContainerOutline.current!,
+                    )
+                  }
+                  onMouseLeave={e =>
+                    handleTechnologyItemMouseHover(
+                      e,
+                      'leave',
+                      designContainerOutline.current!,
+                    )
+                  }
                 >
                   <img src={item.imageLink} alt='' />
                   <p>{item.technologyName}</p>

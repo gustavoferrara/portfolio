@@ -185,6 +185,7 @@ $shadow-spread: 12px;
     text-align: center;
     font-weight: 500;
     max-width: 930px;
+    transition: border 0.2s ease-out;
 
     &_sectiontitle {
       font-size: 20px;
@@ -206,6 +207,11 @@ $shadow-spread: 12px;
         background: linear-gradient(45deg, #d5dbe9, #d5dbe8);
         filter: drop-shadow(10px 10px 12px rgba(0, 0, 0, 0.13));
         outline: 2px solid rgba(255, 255, 255, 0.377);
+        transition: transform 0.15s ease-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
 
         > img {
           position: absolute;
