@@ -26,10 +26,8 @@ const Navbar = () => {
     } else router.push('/');
   };
 
-  const toggleMobileNavbar = () => {
-    const mobileNavStyles = getComputedStyle(mobileNavbar.current!);
-
-    if (mobileNavStyles.display === 'none') {
+  const toggleMobileNavbar = (action: 'show' | 'hide') => {
+    if (action === 'show') {
       mobileNavbar.current!.style.display = 'flex';
 
       setTimeout(() => {
@@ -56,7 +54,7 @@ const Navbar = () => {
 
       if (!section) setTimeout(checkSection, 200);
       else {
-        navbarType === 'mobile' && toggleMobileNavbar();
+        navbarType === 'mobile' && toggleMobileNavbar('hide');
         scrollToElement(section);
       }
     };
@@ -68,7 +66,7 @@ const Navbar = () => {
     <header id={styles.header}>
       <nav ref={mobileNavbar} className={styles.mobile_navmenu}>
         <button
-          onClick={toggleMobileNavbar}
+          onClick={() => toggleMobileNavbar('hide')}
           className={styles.mobile_navmenu_close}
         >
           <img src='/navbar/close.svg' alt='' />
@@ -105,7 +103,7 @@ const Navbar = () => {
           <img src='/logo.svg' alt='' />
         </button>
         <button
-          onClick={toggleMobileNavbar}
+          onClick={() => toggleMobileNavbar('show')}
           className={styles.navbar_hamburgerbtn}
         >
           <img src='/navbar/hamburgermenu.svg' alt='' />
