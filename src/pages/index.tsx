@@ -125,6 +125,8 @@ const LandingPage: React.FC = () => {
     if (screenWidth >= 1000) logoImg = logoImgDesktop.current!;
     else logoImg = logoImgMobile.current!;
 
+    if (!logoImg) return;
+
     const aspectRatio = logoImg.naturalWidth / logoImg.naturalHeight;
 
     let imageWidth = screenWidth;
