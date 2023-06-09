@@ -93,7 +93,7 @@ const Navbar = () => {
           onClick={() => handleNavButtonClick('footer', 'mobile')}
           className={styles.mobile_navmenu_btn}
         >
-          Contact
+          Find me
         </button>
       </nav>
 
@@ -110,6 +110,28 @@ const Navbar = () => {
         >
           <img src='/navbar/hamburgermenu.svg' alt='' />
         </button>
+        <span className={styles.navbar_desktop_items}>
+          <button
+            onClick={() =>
+              handleNavButtonClick(
+                '.landingPage_technologies__yiObY',
+                'desktop',
+              )
+            }
+          >
+            Tech stack
+          </button>
+          <button
+            onClick={() =>
+              handleNavButtonClick('.landingPage_projects_bg__QMEX1', 'desktop')
+            }
+          >
+            Projects
+          </button>
+          <button onClick={() => handleNavButtonClick('footer', 'desktop')}>
+            Find me
+          </button>
+        </span>
       </nav>
     </header>
   );
