@@ -4,13 +4,13 @@ $base-padding: 10px;
   position: fixed;
   z-index: 100;
   width: 100%;
-  background: linear-gradient(0deg, #00000000, #d4d9e8);
+  background: linear-gradient(90deg, #d9deec, #cfd4e4);
 }
 
 #navbar {
   display: flex;
   justify-content: space-between;
-  padding: 4px $base-padding 0;
+  padding: 5px $base-padding 5px;
 }
 
 .navbar {
@@ -102,11 +102,6 @@ $base-padding: 10px;
 
 //* 1000px
 @media screen and (min-width: 62.5em) {
-  #header {
-    background: linear-gradient(90deg, #d9deec, #cfd4e4);
-    padding: 5px 0;
-  }
-
   #navbar {
     max-width: 1600px;
     margin: 0 auto;
