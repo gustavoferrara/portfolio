@@ -6,9 +6,18 @@ const Footer = () => {
   const [userCopiedToClipboard, setUserCopiedToClipboard] = useState(false);
   const email = useRef<HTMLButtonElement | null>(null);
 
-  const copyEmailToClipboard = () => {
-    navigator.clipboard.writeText(email.current!.innerText);
+  const copyEmailToClipboard = (
+    event?: React.KeyboardEvent<HTMLButtonElement>,
+  ) => {
+    if (
+      event &&
+      (event.code === 'Tab' ||
+        event.code === 'ShiftLeft' ||
+        event.code === 'ShiftRight')
+    )
+      return;
 
+    navigator.clipboard.writeText(email.current!.innerText);
     setUserCopiedToClipboard(true);
 
     setTimeout(() => {
@@ -21,7 +30,9 @@ const Footer = () => {
       <p className={styles.title}>You can find me at</p>
       <button
         ref={email}
+        // @ts-ignore
         onClick={copyEmailToClipboard}
+        onKeyDown={e => copyEmailToClipboard(e)}
         className={`${styles.email} ${
           userCopiedToClipboard
             ? styles['email_tooltip-copied']
