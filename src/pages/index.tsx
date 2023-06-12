@@ -1,3 +1,4 @@
+import { gsap, Power2 } from 'gsap/dist/gsap';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
@@ -9,6 +10,7 @@ const LandingPage: React.FC = () => {
   const frontendContainerOutline = useRef<HTMLDivElement | null>(null);
   const backendContainerOutline = useRef<HTMLDivElement | null>(null);
   const designContainerOutline = useRef<HTMLDivElement | null>(null);
+  const heroHeading = useRef<HTMLHeadingElement | null>(null);
 
   type ITechnologiesList = Array<{
     technologyName: string;
@@ -151,6 +153,8 @@ const LandingPage: React.FC = () => {
     mouseAction: 'enter' | 'leave',
     technologySectionContainer: HTMLDivElement,
   ) => {
+    if (window.innerWidth < 1000) return;
+
     if (mouseAction === 'leave') {
       technologySectionContainer.style.border = '3px solid #edf1ff';
       technologySectionContainer.style.boxShadow = `0px 0px 20px #00000018`;
@@ -171,8 +175,47 @@ const LandingPage: React.FC = () => {
 
   useEffect(() => {
     resizeHeroSectionLogoImage();
-
     window.addEventListener('resize', resizeHeroSectionLogoImage);
+
+    const addDivsToHeadingLetters = () => {
+      const letters = heroHeading.current!.childNodes[0].textContent!.split('');
+      const span = heroHeading.current!.childNodes[1];
+
+      heroHeading.current!.removeChild(heroHeading.current!.childNodes[0]);
+      heroHeading.current!.removeChild(heroHeading.current!.childNodes[0]);
+
+      letters.forEach(letter => {
+        const div = document.createElement('div');
+        div.className = styles.hero_heading_letter;
+
+        if (letter.trim() === '') div.innerHTML = '&nbsp;';
+        else div.textContent = letter;
+
+        heroHeading.current!.appendChild(div);
+      });
+
+      heroHeading.current!.appendChild(span);
+    };
+
+    addDivsToHeadingLetters();
+
+    setTimeout(() => {
+      const timeline = gsap.timeline();
+
+      timeline.to(`.${styles.hero_heading_letter}`, {
+        translateY: '0%',
+        duration: 0.7,
+        stagger: 0.017,
+        ease: Power2.easeOut,
+      });
+
+      timeline.to(`.${styles.hero_subheading}`, {
+        opacity: 1,
+        duration: 0.5,
+        ease: Power2.easeOut,
+      });
+    }, 200);
+
     return () => {
       window.removeEventListener('resize', resizeHeroSectionLogoImage);
     };
@@ -181,8 +224,9 @@ const LandingPage: React.FC = () => {
   return (
     <main id={styles.home_wrapper}>
       <section className={styles.hero}>
-        <h1 className={styles.hero_heading}>
-          I&apos;m Gustavo Ferrara <span>Full-stack developer</span>
+        <h1 ref={heroHeading} className={styles.hero_heading}>
+          I&apos;m Gustavo Ferrara
+          <span className={styles.hero_subheading}>Full-stack developer</span>
         </h1>
         <img
           ref={logoImgDesktop}
@@ -304,13 +348,13 @@ const LandingPage: React.FC = () => {
         </div>
         <p className={styles.technologies_paragraph}>
           ...and more! I&apos;m always eager to learn new tools which make me a
-          better professional.
+          better developer
         </p>
       </section>
       <section id={styles.projects} className={styles.projects_bg}>
         <div className={styles.projects}>
           <h2 className={styles.projects_heading}>Projects</h2>
-          <Link href={'/pulseclanwebsite'}>
+          <Link href={'/project/pulseclanwebsite'}>
             <a className={styles.projects_anchor}>
               <div className={styles.projects_container}>
                 <video
