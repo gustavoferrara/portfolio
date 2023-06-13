@@ -1,6 +1,10 @@
+import { useEffect, useRef } from 'react';
+
 import styles from '@/styles/pulseclanWebsite.module.scss';
 
 const PulseClanWebsite: React.FC = () => {
+  const backToTopBtn = useRef<HTMLButtonElement | null>(null);
+
   type ITechnologies = Array<{ link: string; alt: string; type: string }>;
 
   const technologies: ITechnologies = [
@@ -55,6 +59,38 @@ const PulseClanWebsite: React.FC = () => {
       type: 'backend',
     },
   ];
+
+  const checkBackToTopBtn = () => {
+    if (window.scrollY >= 600) {
+      backToTopBtn.current!.style.display = 'block';
+
+      setTimeout(() => {
+        backToTopBtn.current!.style.opacity = '100';
+      }, 1);
+    } else {
+      backToTopBtn.current!.style.opacity = '0';
+
+      setTimeout(() => {
+        backToTopBtn.current!.style.display = 'none';
+      }, 100);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    checkBackToTopBtn();
+    window.addEventListener('scroll', checkBackToTopBtn);
+
+    return () => {
+      window.removeEventListener('scroll', checkBackToTopBtn);
+    };
+  }, []);
 
   return (
     <main id={styles.main}>
@@ -132,6 +168,13 @@ const PulseClanWebsite: React.FC = () => {
           </li>
         </ul>
       </div>
+      <button
+        ref={backToTopBtn}
+        onClick={scrollToTop}
+        className={styles.backtotopbtn}
+      >
+        Back to top
+      </button>
     </main>
   );
 };
