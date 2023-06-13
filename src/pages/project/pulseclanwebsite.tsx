@@ -100,6 +100,38 @@ const PulseClanWebsite: React.FC = () => {
             ))}
         </div>
       </div>
+
+      <div className={styles.text_wrapper}>
+        <h1 className={styles.heading}>
+          About the project
+          <span className={styles.paragraph}>
+            Full-stack MERN website for Pulse Clan, an international gaming
+            organization with over 500k followers across social media.
+          </span>
+        </h1>
+
+        <h2 className={styles.contents_heading}>Contents</h2>
+        <ul className={styles.contents_ul}>
+          <li className={styles.contents_li}>
+            <a href={`#landingpage`}>Landing page</a>
+          </li>
+          <li className={styles.contents_li}>
+            <a href={`#applications`}>Applications and Contact pages</a>
+          </li>
+          <li className={styles.contents_li}>
+            <a href={`#roster`}>Roster page</a>
+          </li>
+          <li className={styles.contents_li}>
+            <a href={`#faqandwallpapers`}>Faq and Wallpaper pages</a>
+          </li>
+          <li className={styles.contents_li}>
+            <a href={`#cms`}>Content Management System overview</a>
+          </li>
+          <li className={styles.contents_li}>
+            <a href={`#deployment`}>Setting up and deploying the server</a>
+          </li>
+        </ul>
+      </div>
     </main>
   );
 };
