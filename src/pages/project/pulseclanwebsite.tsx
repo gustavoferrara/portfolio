@@ -61,13 +61,19 @@ const PulseClanWebsite: React.FC = () => {
   ];
 
   const checkBackToTopBtn = () => {
+    const btnStyles = getComputedStyle(backToTopBtn.current!);
+
     if (window.scrollY >= 600) {
+      if (btnStyles.display === 'block') return;
+
       backToTopBtn.current!.style.display = 'block';
 
       setTimeout(() => {
         backToTopBtn.current!.style.opacity = '100';
       }, 1);
     } else {
+      if (btnStyles.opacity === '0') return;
+
       backToTopBtn.current!.style.opacity = '0';
 
       setTimeout(() => {
