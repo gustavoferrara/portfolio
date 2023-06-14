@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import scrollToElement from '@/helpers/scrollToElement';
 import styles from '@/styles/pulseclanWebsite.module.scss';
 
 const PulseClanWebsite: React.FC = () => {
@@ -159,23 +160,40 @@ const PulseClanWebsite: React.FC = () => {
         <h2 className={styles.contents_heading}>Contents</h2>
         <ul className={styles.contents_ul}>
           <li className={styles.contents_li}>
-            <a href={`#landingpage`}>Landing page</a>
+            <button onClick={() => scrollToElement('landingpage')}>
+              Landing page
+            </button>
           </li>
-          <li className={styles.contents_li}>
-            <a href={`#applications`}>Applications and Contact pages</a>
-          </li>
-          <li className={styles.contents_li}>
-            <a href={`#roster`}>Roster page</a>
-          </li>
-          <li className={styles.contents_li}>
-            <a href={`#faqandwallpapers`}>Faq and Wallpaper pages</a>
-          </li>
-          <li className={styles.contents_li}>
-            <a href={`#cms`}>Content Management System overview</a>
-          </li>
-          <li className={styles.contents_li}>
-            <a href={`#deployment`}>Setting up and deploying the server</a>
-          </li>
+          <button
+            onClick={() => scrollToElement('applications')}
+            className={styles.contents_li}
+          >
+            Application and Contact pages
+          </button>
+          <button
+            onClick={() => scrollToElement('roster')}
+            className={styles.contents_li}
+          >
+            Roster page
+          </button>
+          <button
+            onClick={() => scrollToElement('faqandwallpapers')}
+            className={styles.contents_li}
+          >
+            Faq and Wallpaper pages
+          </button>
+          <button
+            onClick={() => scrollToElement('cms')}
+            className={styles.contents_li}
+          >
+            Content Management System overview
+          </button>
+          <button
+            onClick={() => scrollToElement('deployment')}
+            className={styles.contents_li}
+          >
+            Setting up and deploying the server
+          </button>
         </ul>
       </div>
       <button

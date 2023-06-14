@@ -133,11 +133,12 @@ $base-padding: 32px;
   margin: 2px 0 0 5px;
   line-height: 1.7;
   font-weight: 500;
-  color: #353535;
+  color: #252525;
 }
 
 .contents_li {
   position: relative;
+  display: block;
   width: fit-content;
   margin-left: 9px;
   transition: margin-left 0.1s ease-out;
