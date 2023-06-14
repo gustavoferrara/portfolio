@@ -118,12 +118,14 @@ const PulseClanWebsite: React.FC = () => {
           {technologies
             .filter(tech => tech.type === 'frontend')
             .map(tech => (
-              <img
-                src={tech.link}
-                alt={tech.alt}
-                key={tech.link}
-                className={styles.techstack_icon}
-              />
+              <div key={tech.link} className={styles.techstack_subcontainer}>
+                <span className={styles.techstack_tooltip}>{tech.alt}</span>
+                <img
+                  src={tech.link}
+                  alt={tech.alt}
+                  className={styles.techstack_icon}
+                />
+              </div>
             ))}
         </div>
 
@@ -133,12 +135,14 @@ const PulseClanWebsite: React.FC = () => {
           {technologies
             .filter(tech => tech.type === 'backend')
             .map(tech => (
-              <img
-                src={tech.link}
-                alt={tech.alt}
-                key={tech.link}
-                className={styles.techstack_icon}
-              />
+              <div key={tech.link} className={styles.techstack_subcontainer}>
+                <span className={styles.techstack_tooltip}>{tech.alt}</span>
+                <img
+                  src={tech.link}
+                  alt={tech.alt}
+                  className={styles.techstack_icon}
+                />
+              </div>
             ))}
         </div>
       </div>
