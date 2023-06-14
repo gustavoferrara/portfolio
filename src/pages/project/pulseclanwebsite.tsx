@@ -157,6 +157,51 @@ const PulseClanWebsite: React.FC = () => {
           </span>
         </h1>
 
+        <div className={styles.overview_container}>
+          <p className={styles.paragraph} id={styles.overview_title}>
+            What the project entailed:
+          </p>
+          <ul className={styles.overview_ul}>
+            <li className={styles.overview_li}>
+              &#x2022; Creating a custom headless CMS to facilitate website
+              customization for the managers, and allowing members to modify
+              their public information and manage roster sections on the
+              website.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Integrating authentication and hierarchical authorization
+              levels and restrictions within the CMS, allowing managers to add,
+              remove and modify members and roster at will.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Registering applications and contact form submissions to
+              a database.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Integrating Discord webhooks for automatic submission of
+              applications to dedicated channels.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Implementing the Youtube API for automatic data retrieval
+              and caching in the database.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Utilizing Twitch API to display information on active
+              streamers and automatically refreshing its API credentials to
+              ensure uninterrupted use without the need of maintenance.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Building pages with features like carousels, accordions
+              and animations.
+            </li>
+            <li className={styles.overview_li}>
+              &#x2022; Deploying the website on a Linux machine with Nginx as a
+              reverse proxy, PM2 for process management, and MongoDB for the
+              backend.
+            </li>
+          </ul>
+        </div>
+
         <h2 className={styles.contents_heading}>Contents</h2>
         <ul className={styles.contents_ul}>
           <li className={styles.contents_li}>

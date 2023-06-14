@@ -125,6 +125,31 @@ $base-padding: 32px;
   }
 }
 
+.overview_container {
+  margin: 35px 0;
+  padding: 30px;
+  border: 3px solid #ffffffb2;
+  border-radius: 20px;
+}
+
+.overview_ul {
+  line-height: 1.4;
+}
+
+#overview_title {
+  color: #252525;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.overview_li {
+  margin: 10px 0;
+
+  &:first-child {
+    margin-top: 5px;
+  }
+}
+
 .contents_heading {
   color: #252525;
 }
