@@ -263,3 +263,17 @@ $base-padding: 32px;
     transform: scale(1.1);
   }
 }
+
+// 1000px
+@media screen and (min-width: 62.5em) {
+  .banner {
+    height: fluidSize(165, 1000, 246, 1500);
+  }
+}
+
+// 1200px
+@media screen and (min-width: 75em) {
+  .backtotopbtn {
+    right: fluidSize(24, 1200, 170, 1500);
+  }
+}
