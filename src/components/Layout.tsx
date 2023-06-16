@@ -3,7 +3,7 @@
 
 import Footer from './Footer';
 import Navbar from './Navbar';
-// import RouteTransition from './RouteTransition';
+import RouteTransition from './RouteTransition';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -59,7 +59,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta content='#171717' name='theme-color' />
       </Head> */}
       <div id='wrapper'>
-        {/* <RouteTransition /> */}
+        <RouteTransition />
         <Navbar />
         {children}
         <Footer />
