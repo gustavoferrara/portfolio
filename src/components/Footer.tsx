@@ -6,23 +6,27 @@ const Footer = () => {
   const [userCopiedToClipboard, setUserCopiedToClipboard] = useState(false);
   const email = useRef<HTMLButtonElement | null>(null);
 
-  const copyEmailToClipboard = (
+  const copyEmailToClipboard = async (
     event?: React.KeyboardEvent<HTMLButtonElement>,
   ) => {
-    if (
-      event &&
-      (event.code === 'Tab' ||
-        event.code === 'ShiftLeft' ||
-        event.code === 'ShiftRight')
-    )
+    try {
+      if (
+        event &&
+        (event.code === 'Tab' ||
+          event.code === 'ShiftLeft' ||
+          event.code === 'ShiftRight')
+      )
+        return;
+
+      await navigator.clipboard.writeText(email.current!.innerText);
+      setUserCopiedToClipboard(true);
+
+      setTimeout(() => {
+        setUserCopiedToClipboard(false);
+      }, 2000);
+    } catch {
       return;
-
-    navigator.clipboard.writeText(email.current!.innerText);
-    setUserCopiedToClipboard(true);
-
-    setTimeout(() => {
-      setUserCopiedToClipboard(false);
-    }, 2000);
+    }
   };
 
   return (
