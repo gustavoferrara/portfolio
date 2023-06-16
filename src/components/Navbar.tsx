@@ -1,24 +1,12 @@
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
 
+import scrollToElement from '@/helpers/scrollToElement';
 import styles from '@/styles/navbar.module.scss';
 
 const Navbar = () => {
   const router = useRouter();
   const mobileNavbar = useRef<HTMLElement | null>(null);
-
-  const scrollToElement = (element: Element) => {
-    const desktopNavbar = window.innerWidth >= 1000;
-
-    const navbarOffset = desktopNavbar ? 65 : 45;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - navbarOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-  };
 
   const handleHomeButtonClick = () => {
     if (router.pathname === '/') {
