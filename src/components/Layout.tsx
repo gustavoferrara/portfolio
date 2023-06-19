@@ -1,5 +1,5 @@
-// import Head from 'next/head';
-// import { useRouter } from 'next/router';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
@@ -10,12 +10,12 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  // const router = useRouter();
-  // const currentUrl = `https://pulse-clan.com${router.pathname}`;
+  const router = useRouter();
+  const currentUrl = `https://gustavoferrara.github.io${router.pathname}`;
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <meta charSet='UTF-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -39,25 +39,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           type='image/png'
         />
         <link rel='canonical' href={currentUrl} />
-        <link
-          rel='alternate'
-          hrefLang='en'
-          href={`https://pulse-clan.com/en${router.pathname}`}
-        />
-        <meta content='@The_Pulse_Clan' name='twitter:site' />
-        <meta
-          name='twitter:description'
-          content="Pulse is the #1 Rocket League YouTube team! Whether it's freestyling you are looking for, high level competitive gameplay or masterful edits, we have it all."
-        />
         <meta name='og:locale' property='og:locale' content='en' />
         <meta
           name='og:site_name'
           property='og:site_name'
-          content='Pulse Clan'
+          content='Gustavo Ferrara - Full-stack developer'
         />
         <meta name='og:type' property='og:type' content='website' />
-        <meta content='#171717' name='theme-color' />
-      </Head> */}
+        <meta content='#cfd4e4' name='theme-color' />
+      </Head>
       <div id='wrapper'>
         <RouteTransition />
         <Navbar />
