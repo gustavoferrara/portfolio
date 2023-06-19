@@ -1,4 +1,5 @@
 import { gsap, Power2 } from 'gsap/dist/gsap';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
@@ -222,161 +223,188 @@ const LandingPage: React.FC = () => {
   }, []);
 
   return (
-    <main id={styles.home_wrapper}>
-      <section className={styles.hero}>
-        <h1 ref={heroHeading} className={styles.hero_heading}>
-          I&apos;m Gustavo Ferrara
-          <span className={styles.hero_subheading}>Full-stack developer</span>
-        </h1>
-        <img
-          ref={logoImgDesktop}
-          src='/logoherosection.svg'
-          alt=''
-          className={styles.hero_logo}
+    <>
+      <Head>
+        <title>Gustavo Ferrara - Full-stack developer</title>
+        <meta
+          name='og:title'
+          content='Gustavo Ferrara - Full-stack developer'
         />
-        <img
-          ref={logoImgMobile}
-          src='/logoherosectionmobile.svg'
-          alt=''
-          className={styles.hero_logo_mobile}
+        <meta
+          content="I'm Gustavo Ferrara, a Full-stack developer with knowledge in Typescript, React, Express and many other technologies!"
+          name='description'
         />
-      </section>
-      <section className={styles.technologies}>
-        <h2 className={styles.technologies_heading}>
-          I work with these technologies
-        </h2>
-        <div
-          ref={frontendContainerOutline}
-          className={styles.technologies_container}
-        >
-          <p className={styles.technologies_container_sectiontitle}>
-            Front-end
+        <meta
+          content="I'm Gustavo Ferrara, a Full-stack developer with knowledge in Typescript, React, Express and many other technologies!"
+          property='og:description'
+        />
+        <meta
+          itemProp='name'
+          content='Gustavo Ferrara - Full-stack developer'
+        />
+        <meta
+          itemProp='description'
+          content="I'm Gustavo Ferrara, a Full-stack developer with knowledge in Typescript, React, Express and many other technologies!"
+        />
+      </Head>
+      <main id={styles.home_wrapper}>
+        <section className={styles.hero}>
+          <h1 ref={heroHeading} className={styles.hero_heading}>
+            I&apos;m Gustavo Ferrara
+            <span className={styles.hero_subheading}>Full-stack developer</span>
+          </h1>
+          <img
+            ref={logoImgDesktop}
+            src='/logoherosection.svg'
+            alt=''
+            className={styles.hero_logo}
+          />
+          <img
+            ref={logoImgMobile}
+            src='/logoherosectionmobile.svg'
+            alt=''
+            className={styles.hero_logo_mobile}
+          />
+        </section>
+        <section className={styles.technologies}>
+          <h2 className={styles.technologies_heading}>
+            I work with these technologies
+          </h2>
+          <div
+            ref={frontendContainerOutline}
+            className={styles.technologies_container}
+          >
+            <p className={styles.technologies_container_sectiontitle}>
+              Front-end
+            </p>
+            <div className={styles.technologies_container_grid}>
+              {technologiesList
+                .filter(item => item.type === 'frontend')
+                .map(item => (
+                  <div
+                    className={styles.technologies_container_grid_item}
+                    key={item.imageLink}
+                    onMouseEnter={e =>
+                      handleTechnologyItemMouseHover(
+                        e,
+                        'enter',
+                        frontendContainerOutline.current!,
+                      )
+                    }
+                    onMouseLeave={e =>
+                      handleTechnologyItemMouseHover(
+                        e,
+                        'leave',
+                        frontendContainerOutline.current!,
+                      )
+                    }
+                  >
+                    <img src={item.imageLink} alt='' />
+                    <p>{item.technologyName}</p>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div
+            ref={backendContainerOutline}
+            className={styles.technologies_container}
+          >
+            <p className={styles.technologies_container_sectiontitle}>
+              Back-end
+            </p>
+            <div className={styles.technologies_container_grid}>
+              {technologiesList
+                .filter(item => item.type === 'backend')
+                .map(item => (
+                  <div
+                    className={styles.technologies_container_grid_item}
+                    key={item.imageLink}
+                    onMouseEnter={e =>
+                      handleTechnologyItemMouseHover(
+                        e,
+                        'enter',
+                        backendContainerOutline.current!,
+                      )
+                    }
+                    onMouseLeave={e =>
+                      handleTechnologyItemMouseHover(
+                        e,
+                        'leave',
+                        backendContainerOutline.current!,
+                      )
+                    }
+                  >
+                    <img src={item.imageLink} alt='' />
+                    <p>{item.technologyName}</p>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div
+            ref={designContainerOutline}
+            className={styles.technologies_container}
+          >
+            <p className={styles.technologies_container_sectiontitle}>Design</p>
+            <div className={styles.technologies_container_grid}>
+              {technologiesList
+                .filter(item => item.type === 'design')
+                .map(item => (
+                  <div
+                    className={styles.technologies_container_grid_item}
+                    key={item.imageLink}
+                    onMouseEnter={e =>
+                      handleTechnologyItemMouseHover(
+                        e,
+                        'enter',
+                        designContainerOutline.current!,
+                      )
+                    }
+                    onMouseLeave={e =>
+                      handleTechnologyItemMouseHover(
+                        e,
+                        'leave',
+                        designContainerOutline.current!,
+                      )
+                    }
+                  >
+                    <img src={item.imageLink} alt='' />
+                    <p>{item.technologyName}</p>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <p className={styles.technologies_paragraph}>
+            ...and more! I&apos;m always eager to learn new tools which make me
+            a better developer
           </p>
-          <div className={styles.technologies_container_grid}>
-            {technologiesList
-              .filter(item => item.type === 'frontend')
-              .map(item => (
-                <div
-                  className={styles.technologies_container_grid_item}
-                  key={item.imageLink}
-                  onMouseEnter={e =>
-                    handleTechnologyItemMouseHover(
-                      e,
-                      'enter',
-                      frontendContainerOutline.current!,
-                    )
-                  }
-                  onMouseLeave={e =>
-                    handleTechnologyItemMouseHover(
-                      e,
-                      'leave',
-                      frontendContainerOutline.current!,
-                    )
-                  }
-                >
-                  <img src={item.imageLink} alt='' />
-                  <p>{item.technologyName}</p>
+        </section>
+        <section id={styles.projects} className={styles.projects_bg}>
+          <div className={styles.projects}>
+            <h2 className={styles.projects_heading}>Projects</h2>
+            <Link href={'/project/pulseclanwebsite'}>
+              <a className={styles.projects_anchor}>
+                <div className={styles.projects_container}>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    src='/pulseclanwebsite/preview.mp4'
+                    className={styles.projects_container_video}
+                    tabIndex={-1}
+                  ></video>
+                  <p className={styles.projects_container_description}>
+                    Client work: Full-stack website with custom headless CMS,
+                    restless API, authentication, authorization and more
+                  </p>
+                  <p className={styles.projects_container_cta}>View project</p>
                 </div>
-              ))}
+              </a>
+            </Link>
           </div>
-        </div>
-        <div
-          ref={backendContainerOutline}
-          className={styles.technologies_container}
-        >
-          <p className={styles.technologies_container_sectiontitle}>Back-end</p>
-          <div className={styles.technologies_container_grid}>
-            {technologiesList
-              .filter(item => item.type === 'backend')
-              .map(item => (
-                <div
-                  className={styles.technologies_container_grid_item}
-                  key={item.imageLink}
-                  onMouseEnter={e =>
-                    handleTechnologyItemMouseHover(
-                      e,
-                      'enter',
-                      backendContainerOutline.current!,
-                    )
-                  }
-                  onMouseLeave={e =>
-                    handleTechnologyItemMouseHover(
-                      e,
-                      'leave',
-                      backendContainerOutline.current!,
-                    )
-                  }
-                >
-                  <img src={item.imageLink} alt='' />
-                  <p>{item.technologyName}</p>
-                </div>
-              ))}
-          </div>
-        </div>
-        <div
-          ref={designContainerOutline}
-          className={styles.technologies_container}
-        >
-          <p className={styles.technologies_container_sectiontitle}>Design</p>
-          <div className={styles.technologies_container_grid}>
-            {technologiesList
-              .filter(item => item.type === 'design')
-              .map(item => (
-                <div
-                  className={styles.technologies_container_grid_item}
-                  key={item.imageLink}
-                  onMouseEnter={e =>
-                    handleTechnologyItemMouseHover(
-                      e,
-                      'enter',
-                      designContainerOutline.current!,
-                    )
-                  }
-                  onMouseLeave={e =>
-                    handleTechnologyItemMouseHover(
-                      e,
-                      'leave',
-                      designContainerOutline.current!,
-                    )
-                  }
-                >
-                  <img src={item.imageLink} alt='' />
-                  <p>{item.technologyName}</p>
-                </div>
-              ))}
-          </div>
-        </div>
-        <p className={styles.technologies_paragraph}>
-          ...and more! I&apos;m always eager to learn new tools which make me a
-          better developer
-        </p>
-      </section>
-      <section id={styles.projects} className={styles.projects_bg}>
-        <div className={styles.projects}>
-          <h2 className={styles.projects_heading}>Projects</h2>
-          <Link href={'/project/pulseclanwebsite'}>
-            <a className={styles.projects_anchor}>
-              <div className={styles.projects_container}>
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  src='/pulseclanwebsite/preview.mp4'
-                  className={styles.projects_container_video}
-                  tabIndex={-1}
-                ></video>
-                <p className={styles.projects_container_description}>
-                  Client work: Full-stack website with custom headless CMS,
-                  restless API, authentication, authorization and more
-                </p>
-                <p className={styles.projects_container_cta}>View project</p>
-              </div>
-            </a>
-          </Link>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 };
 
