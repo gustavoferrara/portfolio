@@ -89,6 +89,7 @@ const Navbar = () => {
         <button
           onClick={handleHomeButtonClick}
           className={styles.navbar_homebtn}
+          aria-label='Home button'
         >
           <img src='/logo.svg' alt='' />
         </button>
