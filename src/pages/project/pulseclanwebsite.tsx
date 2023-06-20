@@ -92,6 +92,7 @@ const PulseClanWebsite: React.FC = () => {
   };
 
   useEffect(() => {
+    scrollToTop();
     checkBackToTopBtn();
     window.addEventListener('scroll', checkBackToTopBtn);
 
