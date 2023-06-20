@@ -435,6 +435,7 @@ const PulseClanWebsite: React.FC = () => {
               too cluttered.
             </p>
             <video
+              preload='none'
               className={styles.project_img}
               controls
               loop
@@ -468,6 +469,7 @@ const PulseClanWebsite: React.FC = () => {
               from one roster section to another.
             </p>
             <video
+              preload='none'
               className={styles.project_img}
               controls
               loop
@@ -486,6 +488,7 @@ const PulseClanWebsite: React.FC = () => {
               from our database.
             </p>
             <video
+              preload='none'
               className={styles.project_img}
               controls
               loop
@@ -495,6 +498,7 @@ const PulseClanWebsite: React.FC = () => {
             ></video>
             <p className={styles.project_img_label}>FAQ page</p>
             <video
+              preload='none'
               className={styles.project_img}
               controls
               loop
@@ -504,6 +508,7 @@ const PulseClanWebsite: React.FC = () => {
             ></video>
             <p className={styles.project_img_label}>Wallpapers page</p>
             <video
+              preload='none'
               className={styles.project_img}
               controls
               loop
@@ -515,6 +520,7 @@ const PulseClanWebsite: React.FC = () => {
               Wallpaper managing page on CMS
             </p>
             <video
+              preload='none'
               className={styles.project_img}
               controls
               loop
