@@ -87,7 +87,7 @@ const PulseClanWebsite: React.FC = () => {
   const scrollToTop = (scrollBehavior: 'smooth' | 'instant') => {
     window.scrollTo({
       top: 0,
-      behavior: scrollBehavior,
+      behavior: scrollBehavior as ScrollBehavior,
     });
   };
 
