@@ -436,6 +436,7 @@ const PulseClanWebsite: React.FC = () => {
             </p>
             <video
               preload='none'
+              poster='/pulseclanwebsite/videos/thumbnails/roster.jpg'
               className={styles.project_img}
               controls
               loop
@@ -470,6 +471,7 @@ const PulseClanWebsite: React.FC = () => {
             </p>
             <video
               preload='none'
+              poster='/pulseclanwebsite/videos/thumbnails/managemembers.jpg'
               className={styles.project_img}
               controls
               loop
@@ -489,6 +491,7 @@ const PulseClanWebsite: React.FC = () => {
             </p>
             <video
               preload='none'
+              poster='/pulseclanwebsite/videos/thumbnails/faq.jpg'
               className={styles.project_img}
               controls
               loop
@@ -499,6 +502,7 @@ const PulseClanWebsite: React.FC = () => {
             <p className={styles.project_img_label}>FAQ page</p>
             <video
               preload='none'
+              poster='/pulseclanwebsite/videos/thumbnails/wallpapers.jpg'
               className={styles.project_img}
               controls
               loop
@@ -509,6 +513,7 @@ const PulseClanWebsite: React.FC = () => {
             <p className={styles.project_img_label}>Wallpapers page</p>
             <video
               preload='none'
+              poster='/pulseclanwebsite/videos/thumbnails/wallpaperscms.jpg'
               className={styles.project_img}
               controls
               loop
@@ -521,6 +526,7 @@ const PulseClanWebsite: React.FC = () => {
             </p>
             <video
               preload='none'
+              poster='/pulseclanwebsite/videos/thumbnails/faqcms.jpg'
               className={styles.project_img}
               controls
               loop
