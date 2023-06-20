@@ -84,15 +84,15 @@ const PulseClanWebsite: React.FC = () => {
     }
   };
 
-  const scrollToTop = () => {
+  const scrollToTop = (scrollBehavior: 'smooth' | 'instant') => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: scrollBehavior,
     });
   };
 
   useEffect(() => {
-    scrollToTop();
+    scrollToTop('instant');
     checkBackToTopBtn();
     window.addEventListener('scroll', checkBackToTopBtn);
 
@@ -601,7 +601,7 @@ const PulseClanWebsite: React.FC = () => {
         </div>
         <button
           ref={backToTopBtn}
-          onClick={scrollToTop}
+          onClick={() => scrollToTop('smooth')}
           className={styles.backtotopbtn}
         >
           Back to top
