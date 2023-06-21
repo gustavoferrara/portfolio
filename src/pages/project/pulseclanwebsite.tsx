@@ -199,9 +199,13 @@ const PulseClanWebsite: React.FC = () => {
                 website.
               </li>
               <li className={styles.overview_li}>
-                &#x2022; Integrating authentication and hierarchical
-                authorization levels and restrictions within the CMS, allowing
-                managers to add, remove and modify members and roster at will.
+                &#x2022; Integrating authentication, authorization levels and
+                restrictions within the CMS, allowing managers to add, remove
+                and modify members and roster at will.
+              </li>
+              <li className={styles.overview_li}>
+                &#x2022; Building pages with features like carousels, accordions
+                and animations.
               </li>
               <li className={styles.overview_li}>
                 &#x2022; Registering applications and contact form submissions
@@ -209,7 +213,7 @@ const PulseClanWebsite: React.FC = () => {
               </li>
               <li className={styles.overview_li}>
                 &#x2022; Integrating Discord webhooks for automatic submission
-                of applications to dedicated channels.
+                of form applications to dedicated channels.
               </li>
               <li className={styles.overview_li}>
                 &#x2022; Implementing the Youtube API for automatic data
@@ -221,13 +225,8 @@ const PulseClanWebsite: React.FC = () => {
                 ensure uninterrupted use without the need of maintenance.
               </li>
               <li className={styles.overview_li}>
-                &#x2022; Building pages with features like carousels, accordions
-                and animations.
-              </li>
-              <li className={styles.overview_li}>
-                &#x2022; Deploying the website on a Linux machine with Nginx as
-                a reverse proxy, PM2 for process management, and MongoDB for the
-                backend.
+                &#x2022; Deploying the website on a Linux machine with Nginx,
+                PM2 for process management, and MongoDB for the backend.
               </li>
             </ul>
           </div>
@@ -596,12 +595,9 @@ const PulseClanWebsite: React.FC = () => {
               Setting up and deploying the server
             </h2>
             <p className={`${styles.paragraph} ${styles.paragraph_below}`}>
-              Finding a solution for the server deployment presented its own set
-              of challenges. I compared multiple options and services, but
-              ultimately decided on a DigitalOcean droplet, as it met with our
-              requirements and kept monthly costs in check. The droplet provided
-              a Virtual Private Server (VPS) that gave me all the flexibility i
-              needed.
+              We compared multiple options and services to host the website on,
+              but ultimately decided on a Virtual Private Server with
+              DigitalOcean, which provided all the flexibility that was needed.
             </p>
             <p className={`${styles.paragraph} ${styles.paragraph_below}`}>
               Nginx is being used as the reverse proxy, PM2 to maintain the node
@@ -610,8 +606,8 @@ const PulseClanWebsite: React.FC = () => {
               backend to connect to.
             </p>
             <p className={`${styles.paragraph} ${styles.paragraph_below}`}>
-              To improve protection against DDoS attacks i decided to implement
-              CloudFlare, and also have the added bonus of analytics too.
+              Additionally Cloudflare was implemented as a layer of security and
+              also to get some analytics.
             </p>
           </section>
         </div>
