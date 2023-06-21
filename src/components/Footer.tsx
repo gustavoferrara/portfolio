@@ -1,50 +1,12 @@
-import { useRef, useState } from 'react';
-
 import styles from '@/styles/footer.module.scss';
 
 const Footer = () => {
-  const [userCopiedToClipboard, setUserCopiedToClipboard] = useState(false);
-  const email = useRef<HTMLButtonElement | null>(null);
-
-  const copyEmailToClipboard = async (
-    event?: React.KeyboardEvent<HTMLButtonElement>,
-  ) => {
-    try {
-      if (
-        event &&
-        (event.code === 'Tab' ||
-          event.code === 'ShiftLeft' ||
-          event.code === 'ShiftRight')
-      )
-        return;
-
-      await navigator.clipboard.writeText(email.current!.innerText);
-      setUserCopiedToClipboard(true);
-
-      setTimeout(() => {
-        setUserCopiedToClipboard(false);
-      }, 2000);
-    } catch {
-      return;
-    }
-  };
-
   return (
     <footer id={styles.footer}>
       <p className={styles.title}>You can find me at</p>
-      <button
-        ref={email}
-        // @ts-ignore
-        onClick={copyEmailToClipboard}
-        onKeyDown={e => copyEmailToClipboard(e)}
-        className={`${styles.email} ${
-          userCopiedToClipboard
-            ? styles['email_tooltip-copied']
-            : styles['email_tooltip-copy']
-        }`}
-      >
+      <a href='mailto:gustavoferraradev@gmail.com' className={styles.email}>
         gustavoferraradev@gmail.com
-      </button>
+      </a>
       <a
         className={styles.curriculum}
         href='https://placeholdercv.com'

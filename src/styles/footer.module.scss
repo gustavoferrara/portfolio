@@ -30,47 +30,8 @@
   width: fit-content;
   margin: 6px auto 0;
 
-  &::after {
-    content: '';
-    display: inline-block;
-    background-image: url('/copytoclipboard.svg');
-    background-size: 13.5px 13.5px;
-    width: 13.5px;
-    height: 13.5px;
-    margin-left: 3px;
-  }
-
-  &::before {
-    font-size: 14px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #101010;
-    color: white;
-    padding: 4px 9px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-
-  &:hover::before {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &_tooltip-copy {
-    &::before {
-      content: 'Copy';
-    }
-  }
-
-  &_tooltip-copied {
-    &::before {
-      content: 'Copied!';
-    }
+  &:hover {
+    color: #101010;
   }
 }
 
@@ -132,16 +93,6 @@
 @media screen and (min-width: 62.5em) {
   .email {
     font-size: 22px;
-
-    &::before {
-      font-size: 18px;
-    }
-
-    &::after {
-      background-size: 18px 18px;
-      width: 18px;
-      height: 18px;
-    }
   }
 
   .curriculum {
