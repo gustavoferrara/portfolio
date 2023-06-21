@@ -54,6 +54,38 @@ $base-padding: 32px;
   }
 }
 
+.cta_secondary {
+  display: block;
+  margin: 25px auto 20px;
+  border-radius: 11px;
+  font-weight: 600;
+  width: fit-content;
+  font-size: 18px;
+  cursor: pointer;
+  filter: drop-shadow(3px 4px 7px rgba(0, 0, 0, 0.06));
+  color: #333842;
+  padding-left: 20px;
+
+  transition: font-weight 0.15s ease-out, transform 0.1s ease-out;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    background-image: url('/socialmedia/github.svg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -3%;
+    top: 10%;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
 .techstack_paragraph {
   font-size: 17px;
   text-align: center;

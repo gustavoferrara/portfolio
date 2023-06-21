@@ -130,7 +130,17 @@ const PulseClanWebsite: React.FC = () => {
         >
           Go to live website &nbsp; &nbsp;
         </a>
-        <p className={styles.techstack_paragraph}>Tech stack used:</p>
+
+        <a
+          href='https://github.com/gustavoferrara/pulseclan-website'
+          target='_blank'
+          rel='noreferrer'
+          className={styles.cta_secondary}
+        >
+          View repository
+        </a>
+
+        <p className={styles.techstack_paragraph}>Tech stack used</p>
         <div className={styles.techstack_wrapper}>
           <div
             className={styles.techstack_container}
