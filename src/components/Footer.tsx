@@ -9,11 +9,11 @@ const Footer = () => {
       </a>
       <a
         className={styles.curriculum}
-        href='https://placeholdercv.com'
+        href='https://gustavoferrara.github.io/resume.pdf'
         target='_blank'
         rel='noreferrer'
       >
-        My curriculum &nbsp;&nbsp;
+        My resume &nbsp;&nbsp;
       </a>
       <a
         className={styles.socialmedia}
