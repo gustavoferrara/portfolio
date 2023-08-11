@@ -9,7 +9,7 @@ const Footer = () => {
       </a>
       <a
         className={styles.curriculum}
-        href='https://gustavoferrara.github.io/resume.pdf'
+        href='https://gustavoferrara.github.io/Gustavo-Ferrara-Resume.pdf'
         target='_blank'
         rel='noreferrer'
       >
