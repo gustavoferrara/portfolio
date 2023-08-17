@@ -187,6 +187,11 @@ const PulseClanWebsite: React.FC = () => {
             </span>
           </h1>
 
+          <p className={styles.paragraph}>
+            Reponsible for talking with the client, coordinating with designers,
+            to developing and deploying the website.
+          </p>
+
           <div className={styles.overview_container}>
             <p className={styles.paragraph} id={styles.overview_title}>
               What the project entailed:
@@ -201,7 +206,7 @@ const PulseClanWebsite: React.FC = () => {
               <li className={styles.overview_li}>
                 &#x2022; Integrating authentication, authorization levels and
                 restrictions within the CMS, allowing managers to add, remove
-                and modify members and roster at will.
+                and modify members and roster at will, among other features.
               </li>
               <li className={styles.overview_li}>
                 &#x2022; Building pages with features like carousels, accordions
@@ -210,6 +215,10 @@ const PulseClanWebsite: React.FC = () => {
               <li className={styles.overview_li}>
                 &#x2022; Registering applications and contact form submissions
                 to a database.
+              </li>
+              <li className={styles.overview_li}>
+                &#x2022; Making multiple parts of the website editable from the
+                CMS by creating protected endpoints.
               </li>
               <li className={styles.overview_li}>
                 &#x2022; Integrating Discord webhooks for automatic submission
@@ -225,8 +234,8 @@ const PulseClanWebsite: React.FC = () => {
                 ensure uninterrupted use without the need of maintenance.
               </li>
               <li className={styles.overview_li}>
-                &#x2022; Deploying the website on a Linux machine with Nginx,
-                PM2 for process management, and MongoDB for the backend.
+                &#x2022; Deploying the website on a Linux system with Nginx,
+                MongoDB and PM2.
               </li>
             </ul>
           </div>
