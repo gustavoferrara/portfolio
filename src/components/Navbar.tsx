@@ -118,7 +118,7 @@ const Navbar = () => {
             Projects
           </button>
           <button onClick={() => handleNavButtonClick('footer', 'desktop')}>
-            Find me
+            Contact
           </button>
         </span>
       </nav>
