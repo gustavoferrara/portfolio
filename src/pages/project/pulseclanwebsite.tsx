@@ -131,14 +131,14 @@ const PulseClanWebsite: React.FC = () => {
           Go to live website &nbsp; &nbsp;
         </a>
 
-        <a
+        {/* <a
           href='https://github.com/gustavoferrara/pulseclan-website'
           target='_blank'
           rel='noreferrer'
           className={styles.cta_secondary}
         >
           View repository
-        </a>
+        </a> */}
 
         <p className={styles.techstack_paragraph}>Tech stack used</p>
         <div className={styles.techstack_wrapper}>
@@ -188,8 +188,8 @@ const PulseClanWebsite: React.FC = () => {
           </h1>
 
           <p className={styles.paragraph}>
-            Reponsible for talking with the client, coordinating with designers,
-            to developing and deploying the website.
+            Responsible for talking with the client, coordinating with
+            designers, to developing and deploying the website.
           </p>
 
           <div className={styles.overview_container}>
